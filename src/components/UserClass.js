@@ -48,7 +48,7 @@ class UserClass extends React.Component {
         <h1>Location: {location}</h1>
         <h1>Adarsha-React</h1>
 
-        <UserClass2 />
+        <UserClass2 count1={count1} />
       </div>
     );
   }
