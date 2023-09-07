@@ -1,9 +1,11 @@
 import React from "react";
+import UserClass2 from "./UserClass2";
 
 class UserClass extends React.Component {
   constructor(props) {
+    console.log("Child Constructor");
     super(props);
-    console.log(props);
+    // console.log(props);
 
     this.state = {
       count1: 1,
@@ -11,7 +13,13 @@ class UserClass extends React.Component {
       count3: 3,
     };
   }
+
+  componentDidMount() {
+    console.log("Child Component Did Mount");
+  }
+
   render() {
+    console.log("Child Render");
     const { name, location } = this.props;
     const { count1 } = this.state;
 
@@ -39,6 +47,8 @@ class UserClass extends React.Component {
         <h1>Name: {name}</h1>
         <h1>Location: {location}</h1>
         <h1>Adarsha-React</h1>
+
+        <UserClass2 />
       </div>
     );
   }
