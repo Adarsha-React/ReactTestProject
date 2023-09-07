@@ -4,7 +4,7 @@ import UserClass from "./UserClass";
 const About = () => {
   return (
     <div>
-      <User name={"Adarsha (Function)"} />
+      {/* <User name={"Adarsha (Function)"} /> */}
       <UserClass name={"Adarsha (Class)"} location={"Bangalore"} />
     </div>
   );
