@@ -1,22 +1,20 @@
 import React from "react";
+
 class UserClass2 extends React.Component {
   constructor(props) {
-    console.log("Child 2 constructor");
     super(props);
+    console.log("Child-2 - Constructor");
   }
 
   componentDidMount() {
-    console.log("Child2 component did mount");
+    console.log("Child-2 - componentDidMount");
   }
 
   render() {
-    const { count1 } = this.props;
-
-    console.log("Child2 render");
+    console.log("Child-2 - render");
     return (
       <div>
-        <h1>Child 2 clas component</h1>
-        <h1 className="font-bold"> Count1 from Child2 {count1}</h1>
+        <h1>User class2</h1>
       </div>
     );
   }

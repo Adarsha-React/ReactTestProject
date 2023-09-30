@@ -1,5 +1,4 @@
 import React from "react";
-import User from "./User";
 import UserClass from "./UserClass";
 import UserClass2 from "./UserClass2";
 
@@ -17,9 +16,8 @@ class About extends React.Component {
     console.log("Parent Render");
     return (
       <div>
-        {/* <User name={"Adarsha (Function)"} /> */}
-        <UserClass name={"Adarsha (Class)"} location={"Bangalore"} />
-        {/* <UserClass2 /> */}
+        <UserClass name={"Child-1"} location={"Bangalore"} />
+        <UserClass2 />
       </div>
     );
   }

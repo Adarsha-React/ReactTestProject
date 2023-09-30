@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+React - Class components and Function Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔷 Functional Components
 
-## Available Scripts
+1️⃣ Functional Components are new way of writing code React.
 
-In the project directory, you can run:
+2️⃣ These are just normal Javascript functions which returns some piece of JSX.
 
-### `npm start`
+3️⃣ Mainly, hooks are used to handle life cycle methods of React. Hooks are also normal Javascript functions, few hooks are provided by React library and we can also create our own hooks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4️⃣ State variables are created using useState() hook - it returns an array which includes variable and function to change the state variable.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5️⃣ useEffect() hook is perfect place to make an API call in functional components - this will be called after initial render and can be called whenever any state changes in the application.
 
-### `npm test`
+🔷 Class Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1️⃣ These are normal Javascript class which extends React.Component class to make simple class as a React component.
 
-### `npm run build`
+2️⃣ It has a render() method which will return some piece of JSX.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3️⃣ Class components have life cycle methods:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+--Mounting --
+◻ constructor()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+      ◻  render()
 
-### `npm run eject`
+      ◻  componentDidMount()
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+--Updating-- when props changes/setState
+◻ render()
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+      ◻  componentDidUpdate()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+--Un-mounting-- when component is deleted from the DOM tree or new page opened
+◻ componentWillUnMount()
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4️⃣
 
-## Learn More
+**_ Million dollar questions _**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+◾ Why React is Fast and why it is so popular library?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+◾ Do you know what is the most expensive task in any web applications?
 
-### Code Splitting
+       👉  It is DOM manipulation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You should know how React works behind the scene, then you will have answers of the above question.
 
-### Analyzing the Bundle Size
+👉 It uses Virtual DOM concept strong to find the difference b/w renders.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👉 It creates batches to process into two phases
 
-### Making a Progressive Web App
+      1️⃣   Render phase   2️⃣   Commit phase
+            Constructor and render methods are called in Render phase
+            Actual DOM updates happens in commit phase then ComponetDidMount is called.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+      React will batch all render phase methods and executes it on first go then all commit phase methods will be called. - this is big optimization of React.
 
-### Advanced Configuration
+      Virtual DOM created and finds the difference b/w renders in render phase, commit phase will run based on updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Once the component is mounted, componentDidMount will be called - if there is any API called made or some data updates the state variables then Update cycle begins with that.
 
-### Deployment
+During Update Cycle -
+Again render method will be called (VD created & diff calculated) -- Updates the DOM tree -- ComponentDidUpdate method will be called.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Finally, when component destroyed/used moved to different page - Un-Mounting Cycle will be called.
+If you want un-subscribe to some events which you have added earlier, you can do this here.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Keep learning 🙂

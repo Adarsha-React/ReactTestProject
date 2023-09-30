@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Title = () => {
   return (
     <div>
@@ -12,8 +14,12 @@ const Header = () => {
       <div className="w-2/3 flex justify-between mx-auto">
         <Title />
         <div className="flex list-none">
-          <li className="pr-5 font-semibold text-sm cursor-pointer">About</li>
-          <li className="pr-5 font-semibold text-sm cursor-pointer">Login</li>
+          <li className="pr-5 font-semibold text-sm cursor-pointer">
+            <Link to={"/about"}>About </Link>
+          </li>
+          <li className="pr-5 font-semibold text-sm cursor-pointer">
+            <Link to={"/login"}>Login</Link>{" "}
+          </li>
         </div>
       </div>
     </div>
