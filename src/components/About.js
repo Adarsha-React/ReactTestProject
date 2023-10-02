@@ -1,6 +1,7 @@
 import React from "react";
 import UserClass from "./UserClass";
 import UserClass2 from "./UserClass2";
+import LanguageList from "./LanguageList";
 
 class About extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class About extends React.Component {
       <div>
         <UserClass name={"Child-1"} location={"Bangalore"} />
         <UserClass2 />
+        <LanguageList />
       </div>
     );
   }
